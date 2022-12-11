@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const db_string = process.env.DB_CONNECTION_STRING;
 
-const postsRoutes = require('./routes/posts');
+const listingsRoutes = require('./routes/listings');
 
 const app = express();
 
@@ -34,6 +34,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/posts', postsRoutes);
+app.use('/listings', listingsRoutes);
 
 module.exports = app;

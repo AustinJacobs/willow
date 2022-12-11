@@ -1,9 +1,13 @@
-<mat-toolbar color="primary">
-  <span><a routerLink="/">MyMessages</a></span>
+<mat-toolbar class="toolbar">
+  <div class="logo"><a routerLink="/">Willow Real Estate Listings</a></div>
+  <span class="small-spacer"></span>
+  <a routerLink="/" class="listings">View Listings</a>
   <span class="spacer"></span>
   <ul>
     <li>
-      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
+      <a routerLink="/create"
+        ><button class="button-inverted">New Listing</button></a
+      >
     </li>
   </ul>
 </mat-toolbar>

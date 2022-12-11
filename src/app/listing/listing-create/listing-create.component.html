@@ -1,0 +1,30 @@
+<mat-card>
+  <form (submit)="onSaveListing(listingForm)" #listingForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="title"
+        [ngModel]="listing?.title"
+        required
+        minlength="3"
+        placeholder="Listing Title"
+        #title="ngModel"
+      />
+      <mat-error *ngIf="title.invalid">Please enter a listing title.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="content"
+        [ngModel]="listing?.content"
+        required
+        placeholder="Listing Content"
+        #content="ngModel"
+      ></textarea>
+      <mat-error *ngIf="content.invalid">Please enter a listing title.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Save Listing</button>
+  </form>
+</mat-card>

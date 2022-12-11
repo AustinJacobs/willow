@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
-import { PostCreateComponent } from './posts/post-create/post-create.component';
-import { PostListComponent } from './posts/post-list/post-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ListingCreateComponent } from './listing/listing-create/listing-create.component';
+import { ListingListComponent } from './listing/listing-list/listing-list.component';
 
 const routes: Routes = [
-  { path: '', component: PostListComponent },
-  { path: 'create', component: PostCreateComponent },
-  { path: 'edit/:postId', component: PostCreateComponent },
+  { path: '', component: ListingListComponent },
+  { path: 'create', component: ListingCreateComponent },
+  { path: 'edit/:listingId', component: ListingCreateComponent },
 ];
 
 @NgModule({

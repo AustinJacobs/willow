@@ -6,9 +6,46 @@ ul {
 
 a {
   text-decoration: none;
+  color: #2b2d42;
+}
+
+button:hover {
+  box-shadow: 5px 5px #2b2d42;
   color: white;
 }
 
+.button-inverted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 30px;
+  border: 2px solid black;
+  box-shadow: 5px 5px gray;
+  background-color: #7dcfb6;
+}
+
+.small-spacer {
+  margin: 0 10px 0 0;
+}
+
 .spacer {
-  width: 20px;
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  background-color: #8d99ae;
+}
+
+.listings {
+  color: white;
+}
+
+.listings:hover {
+  color: #2b2d42;
+}
+
+.logo {
+  border-right: 1px solid #7dcfb6;
+  padding-right: 10px;
 }
