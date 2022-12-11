@@ -1,13 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
+const db_string = process.env.DB_CONNECTION_STRING;
 
 const Post = require('./models/post');
 
 const app = express();
 
 mongoose
-  .connect(process.env.DB_CONNECTION_STRING)
+  .connect(db_string)
   .then(() => {
     console.log('Connected to database!');
   })
