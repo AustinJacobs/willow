@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Listing } from '../listing.model';
 
 import { ListingsService } from '../listings.service';
@@ -25,7 +25,8 @@ export class ListingCreateComponent implements OnInit {
 
   constructor(
     public listingsService: ListingsService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public router: Router,
   ) {}
 
   ngOnInit(): void {

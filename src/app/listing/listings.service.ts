@@ -27,7 +27,7 @@ export class ListingsService {
               residenceType: listing.residenceType,
               yearBuilt: listing.yearBuilt,
               sqFeet: listing.sqFeet,
-              pricePerSqFeet: listing.pricePerSqFeet
+              pricePerSqFeet: listing.pricePerSqFeet,
             };
           });
         })
@@ -43,13 +43,40 @@ export class ListingsService {
   }
 
   getListing(id: string) {
-    return this.http.get<{ _id: string; title: string; content: string }>(
-      'http://localhost:3000/listings/' + id
-    );
+    return this.http.get<{
+      _id: string;
+      title: string;
+      content: string;
+      price: string;
+      address: string;
+      residenceType: string;
+      yearBuilt: string;
+      sqFeet: string;
+      pricePerSqFeet: string;
+    }>('http://localhost:3000/listings/' + id);
   }
 
-  addListing(title: string, content: string) {
-    const listing: Listing = { id: null, title: title, content: content };
+  addListing(
+    title: string,
+    content: string,
+    price: string,
+    address: string,
+    residenceType: string,
+    yearBuilt: string,
+    sqFeet: string,
+    pricePerSqFeet: string
+  ) {
+    const listing: Listing = {
+      id: null,
+      title: title,
+      content: content,
+      price: price,
+      address: address,
+      residenceType: residenceType,
+      yearBuilt: yearBuilt,
+      sqFeet: sqFeet,
+      pricePerSqFeet: pricePerSqFeet,
+    };
     this.http
       .post<{ message: string }>('http://localhost:3000/listings', listing)
       .subscribe((responseData) => {
@@ -59,8 +86,28 @@ export class ListingsService {
       });
   }
 
-  updateListing(id: string, title: string, content: string) {
-    const listing: Listing = { id: id, title: title, content: content };
+  updateListing(
+    id: string,
+    title: string,
+    content: string,
+    price: string,
+    address: string,
+    residenceType: string,
+    yearBuilt: string,
+    sqFeet: string,
+    pricePerSqFeet: string
+  ) {
+    const listing: Listing = {
+      id: id,
+      title: title,
+      content: content,
+      price: price,
+      address: address,
+      residenceType: residenceType,
+      yearBuilt: yearBuilt,
+      sqFeet: sqFeet,
+      pricePerSqFeet: pricePerSqFeet,
+    };
     this.http
       .put('http://localhost:3000/listings/' + id, listing)
       .subscribe((response) => {

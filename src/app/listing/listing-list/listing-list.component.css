@@ -6,3 +6,23 @@
 .info-text {
   text-align: center;
 }
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list-container {
+  font-family: sans-serif;
+  width: 50%;
+}
+
+.card {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  box-shadow: 5px 5px gray;
+  background-color: #7dcfb6;
+}
