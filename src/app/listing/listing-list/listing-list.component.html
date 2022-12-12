@@ -1,17 +1,21 @@
-<mat-accordion multi="true" *ngIf="listings.length > 0">
-  <mat-expansion-panel *ngFor="let listing of listings">
-    <mat-expansion-panel-header>
-      {{ listing.title }}
-    </mat-expansion-panel-header>
-    <p>{{ listing.content }}</p>
-    <mat-action-row>
-      <a [routerLink]="['/edit', listing.id]" mat-button color="primary">EDIT</a>
-      <button mat-button color="warn" (click)="onDelete(listing.id)">
-        DELETE
-      </button>
-    </mat-action-row>
-  </mat-expansion-panel>
-</mat-accordion>
-<p class="info-text mat-body-1" *ngIf="listings.length <= 0">
-  No listings added yet!
-</p>
+<div class="list-container">
+  <mat-accordion multi="true" *ngIf="listings.length > 0">
+    <mat-expansion-panel *ngFor="let listing of listings">
+      <mat-expansion-panel-header>
+        {{ listing.title }}
+      </mat-expansion-panel-header>
+      <p>{{ listing.content }}</p>
+      <mat-action-row>
+        <a [routerLink]="['/edit', listing.id]" mat-button color="primary"
+          >EDIT</a
+        >
+        <button mat-button color="warn" (click)="onDelete(listing.id)">
+          DELETE
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class="info-text mat-body-1" *ngIf="listings.length <= 0">
+    No listings added yet!
+  </p>
+</div>

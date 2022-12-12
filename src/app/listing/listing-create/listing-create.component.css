@@ -2,3 +2,19 @@ mat-form-field,
 textarea {
   width: 100%;
 }
+
+.create-container {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 30px;
+  border: 2px solid black;
+  box-shadow: 5px 5px gray;
+  background-color: #7dcfb6;
+}

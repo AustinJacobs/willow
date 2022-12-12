@@ -13,6 +13,12 @@ import { ListingsService } from '../listings.service';
 export class ListingCreateComponent implements OnInit {
   enteredTitle = '';
   enteredContent = '';
+  enteredPrice = '';
+  enteredAddress = '';
+  enteredResidenceType = '';
+  enteredYearBuilt = '';
+  enteredSqFeet = '';
+  enteredPricePerSqFeet = '';
   private mode = 'create';
   private listingId: string;
   listing: Listing;
@@ -34,6 +40,12 @@ export class ListingCreateComponent implements OnInit {
               id: listingData._id,
               title: listingData.title,
               content: listingData.content,
+              price: listingData.price,
+              address: listingData.address,
+              residenceType: listingData.residenceType,
+              yearBuilt: listingData.yearBuilt,
+              sqFeet: listingData.sqFeet,
+              pricePerSqFeet: listingData.pricePerSqFeet,
             };
           });
       } else {
@@ -48,12 +60,23 @@ export class ListingCreateComponent implements OnInit {
       return;
     }
     if (this.mode === 'create') {
-      this.listingsService.addListing(form.value.title, form.value.content);
+      this.listingsService.addListing(form.value.title, form.value.content, form.value.price,
+        form.value.address,
+        form.value.residenceType,
+        form.value.yearBuilt,
+        form.value.sqFeet,
+        form.value.pricePerSqFeet,);
     } else {
       this.listingsService.updateListing(
         this.listingId,
         form.value.title,
-        form.value.content
+        form.value.content,
+        form.value.price,
+        form.value.address,
+        form.value.residenceType,
+        form.value.yearBuilt,
+        form.value.sqFeet,
+        form.value.pricePerSqFeet,
       );
     }
     form.resetForm();

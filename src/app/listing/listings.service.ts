@@ -22,6 +22,12 @@ export class ListingsService {
               title: listing.title,
               content: listing.content,
               id: listing._id,
+              price: listing.price,
+              address: listing.address,
+              residenceType: listing.residenceType,
+              yearBuilt: listing.yearBuilt,
+              sqFeet: listing.sqFeet,
+              pricePerSqFeet: listing.pricePerSqFeet
             };
           });
         })

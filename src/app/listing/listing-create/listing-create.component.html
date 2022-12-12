@@ -1,30 +1,128 @@
-<mat-card>
-  <form (submit)="onSaveListing(listingForm)" #listingForm="ngForm">
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="title"
-        [ngModel]="listing?.title"
-        required
-        minlength="3"
-        placeholder="Listing Title"
-        #title="ngModel"
-      />
-      <mat-error *ngIf="title.invalid">Please enter a listing title.</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea
-        matInput
-        rows="4"
-        name="content"
-        [ngModel]="listing?.content"
-        required
-        placeholder="Listing Content"
-        #content="ngModel"
-      ></textarea>
-      <mat-error *ngIf="content.invalid">Please enter a listing title.</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">Save Listing</button>
-  </form>
-</mat-card>
+<div class="create-container">
+  <div>
+    <form (submit)="onSaveListing(listingForm)" #listingForm="ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="title"
+          [ngModel]="listing?.title"
+          required
+          minlength="3"
+          placeholder="Listing Title"
+          #title="ngModel"
+        />
+        <mat-error *ngIf="title.invalid"
+          >Please enter a listing title.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          rows="4"
+          name="content"
+          [ngModel]="listing?.content"
+          required
+          placeholder="Listing Description"
+          #content="ngModel"
+        ></textarea>
+        <mat-error *ngIf="content.invalid"
+          >Please enter listing description.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="price"
+          [ngModel]="listing?.price"
+          required
+          minlength="3"
+          placeholder="Listing Price"
+          #price="ngModel"
+        />
+        <mat-error *ngIf="price.invalid"
+          >Please enter a listing price.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="address"
+          [ngModel]="listing?.address"
+          required
+          minlength="3"
+          placeholder="Listing Address"
+          #address="ngModel"
+        />
+        <mat-error *ngIf="address.invalid"
+          >Please enter a listing address.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="residenceType"
+          [ngModel]="listing?.residenceType"
+          required
+          minlength="3"
+          placeholder="Listing Type"
+          #residenceType="ngModel"
+        />
+        <mat-error *ngIf="residenceType.invalid"
+          >Please enter a listing type.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="yearBuilt"
+          [ngModel]="listing?.yearBuilt"
+          required
+          minlength="3"
+          placeholder="Listing Build Year"
+          #yearBuilt="ngModel"
+        />
+        <mat-error *ngIf="yearBuilt.invalid"
+          >Please enter a listing built year.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="sqFeet"
+          [ngModel]="listing?.sqFeet"
+          required
+          minlength="3"
+          placeholder="Listing Square Footage"
+          #sqFeet="ngModel"
+        />
+        <mat-error *ngIf="sqFeet.invalid"
+          >Please enter a listing square footage.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="pricePerSqFeet"
+          [ngModel]="listing?.pricePerSqFeet"
+          required
+          minlength="3"
+          placeholder="Listing Price Per Square Foot"
+          #pricePerSqFeet="ngModel"
+        />
+        <mat-error *ngIf="pricePerSqFeet.invalid"
+          >Please enter a listing price per square footage.</mat-error
+        >
+      </mat-form-field>
+      <button class="submit" mat-raised-button type="submit">
+        Save Listing
+      </button>
+    </form>
+  </div>
+</div>

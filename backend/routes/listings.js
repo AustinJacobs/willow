@@ -8,6 +8,12 @@ router.post('', (req, res, next) => {
   const listing = new Listing({
     title: req.body.title,
     content: req.body.content,
+    price: req.body.price,
+    address: req.body.address,
+    residenceType: req.body.residenceType,
+    yearBuilt: req.body.yearBuilt,
+    sqFeet: req.body.sqFeet,
+    pricePerSqFeet: req.body.pricePerSqFeet,
   });
   listing.save(); // Maybe post.save
   res.status(201).json({
@@ -20,6 +26,12 @@ router.put('/:id', (req, res, next) => {
     _id: req.body.id,
     title: req.body.title,
     content: req.body.content,
+    price: req.body.price,
+    address: req.body.address,
+    residenceType: req.body.residenceType,
+    yearBuilt: req.body.yearBuilt,
+    sqFeet: req.body.sqFeet,
+    pricePerSqFeet: req.body.pricePerSqFeet,
   });
   Listing.updateOne({ _id: req.params.id }, listing).then((result) => {
     console.log(result);
